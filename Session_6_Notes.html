@@ -1,0 +1,342 @@
+<div style="font-size: 18.6667px; font-family: helvetica;">
+<div style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 51px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #ffffff; font-family: Arial; font-size: 51px; font-style: normal; line-height: 51px; text-align: center;"><span style="font-family: helvetica;"><strong>Session 6 - Agentic Architecture</strong></span></h1>
+</div>
+<div style="font-family: helvetica; font-size: 18.6667px;">
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+</div>
+</div>
+<div style="font-size: 18.6667px; font-family: helvetica;"><strong>Agent Architecture – Cognitive Layers &nbsp;</strong><br><span>&nbsp; &nbsp;- Multi-layered agent design (Perception → Memory → Action). &nbsp;</span><br><span>&nbsp; &nbsp;- Modular agent frameworks and their advantages. &nbsp;</span><br><span>&nbsp; &nbsp;- Implementing cognitive pipelines for AI-driven workflows. &nbsp;</span></div>
+<div style="font-size: 18.6667px; font-family: helvetica;">
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Little Bit of Python First</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><strong><span style="font-family: helvetica; font-size: 24pt;">The <span style="font-family: helvetica;"><span style="color: #169179;"><span style="background-color: #ecf0f1;">&nbsp;logging </span></span></span>&nbsp;module</span></strong></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">The <span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;logging </span></strong>&nbsp;</span>module in Python is a built-in library used for tracking events that happen when your code runs. IT's mainly used for report status, errors, and debug information (no more <span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;<span style="color: #ba372a;">print</span> </span></strong></span>), making it easier to understand what's happening inside your application during development and after deployment.&nbsp;</span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Why use <span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;logging </span></strong></span>&nbsp;instead or <span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;print() </span></strong></span>?</span></span></p>
+<ul>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Better control over message level (info, warning, error, etc.)</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Easy to route logs to files, streams, or external systems</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Supports formatting and timestamps</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Can be adjusted globally without changing every log statement.&nbsp;</span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Basic Example:</span></span></strong></p>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293582670/preview?verifier=pw8OH9rgJxOaHP2liVoTcP9rOqLe10laqrlGZWeD" alt="basicExampoe-1.png" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293582670" data-api-returntype="File" loading="lazy"></span></span></strong></p>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293582774/preview?verifier=TGXLvhx51KpY2BXV2nT9xHCByrvfccfKkUuHTixS" alt="basicExampl1Output.png" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293582774" data-api-returntype="File" loading="lazy"></span></span></strong></p>
+<p><strong>Log levels</strong><br>Python provides several log levels, each serving a different purpose:</p>
+<ul>
+<li><strong>DEBUG (10)</strong>: Detailed information useful primarily for diagnosing issues.
+<ul>
+<li>DEBUG, INFO, WARNING, ERROR, CRITICAL</li>
+</ul>
+</li>
+<li><strong>INFO (20)</strong>: Confirmation that the application is functioning as expected.
+<ul>
+<li>INFO, WARNING, ERROR, CRITICAL</li>
+</ul>
+</li>
+<li><strong>WARNING (30)</strong>: A sign that something unexpected occurred or a potential problem might arise soon.
+<ul>
+<li>WARNING, ERROR, CRITICAL</li>
+</ul>
+</li>
+<li><strong>ERROR (40)</strong>: Indicates a significant issue that has prevented certain functions from executing.
+<ul>
+<li>ERROR, CRITICAL</li>
+</ul>
+</li>
+<li><strong>CRITICAL (40)</strong>: A severe error suggesting that the program may be unable to continue running.
+<ul>
+<li>CRITICAL only</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>This means, if we change the <span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;level = logging.INFO </span></strong></span></span></span>&nbsp;to &nbsp;<span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="color: #169179;"><strong><span style="background-color: #ecf0f1;"> logging.WARNING&nbsp;</span></strong></span></span></span></p>
+<p><img src="https://canvas.instructure.com/courses/11514125/files/293582909/preview?verifier=dGCNhLaz2miJ7YeVPFW3ITKrGU9tGjFxeZNsUscC" alt="Warning.png" width="700" height="160" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293582909" data-api-returntype="File" loading="lazy"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Log to a File:</span></span></strong></p>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293582728/preview?verifier=lYnWFoRi50Xy8JNifybl3fItHbZryVXr8MbmP8dx" alt="basicExample2.png" width="700" height="144" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293582728" data-api-returntype="File" loading="lazy"></span></span></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><span style="font-size: 24pt;"><strong>The</strong> <span style="font-family: helvetica; font-size: 24pt;"><span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;pydantic&nbsp;</span></strong></span></span> <strong>library: Agent's Personal Assistant</strong></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;pydantic </span></strong></span></span></span>&nbsp;is a Python library used for <strong>data validation and settings management using Python type annotations. </strong>It allows you to define Python classes that act like&nbsp;<em>schemas</em>, ensuring that data passed around your system is structured, typed and validated.&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">Agentic AI isn't just about "Call GPT and wait". It's&nbsp;<strong>modular cognition:</strong></p>
+<p style="text-align: center;"><strong>👁️ Perceive → 🧠 Remember → 🧭 Decide → 🎯 Act</strong></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">Each step&nbsp;<strong>passed information </strong>to the next. And by now I am sure you know that this info is messy or malformed. That's where&nbsp;<strong>Pydantic steps in</strong>. It enforces clean, type-safe data across your cognitive layers.</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;">In&nbsp;<strong>Agentic AI</strong>, especially when we're building&nbsp;<strong>modular cognitive layers&nbsp;</strong>(Perception, Memory, Decision, and Action), <strong>data flows between modules</strong>. You need a consistent, robust way to:</p>
+<ul>
+<li style="text-align: left;">Define the shape of input/output between layers</li>
+<li style="text-align: left;">Validate that agents are passing around expected structures</li>
+<li style="text-align: left;">Serialize and trace agent memory over time</li>
+<li style="text-align: left;">Ensure Clean interoperability between APIs, LLM Prompts and logs.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Key Benefits for Agentic AI</strong></p>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100.023%; background-color: #ecf0f1; border-style: none;" border="0">
+<tbody>
+<tr>
+<td style="width: 33.2639%;"><strong>Need in Agentic AI</strong></td>
+<td style="width: 66.7142%;"><strong>Pydantic Feature that Helps</strong></td>
+</tr>
+<tr>
+<td style="width: 33.2639%;">Clean, structured input/output</td>
+<td style="width: 66.7142%;"><span style="font-family: helvetica; background-color: #ffffff;"><span style="font-size: 18.6667px; background-color: #ffffff;"><span style="color: #169179;"><strong>&nbsp;BaseModel </strong></span></span></span>&nbsp;classes with strict types</td>
+</tr>
+<tr>
+<td style="width: 33.2639%;">Fast validation</td>
+<td style="width: 66.7142%;">Runtime type enforcement (e.g. <span style="font-family: helvetica; background-color: #ffffff;"><span style="font-size: 18.6667px; background-color: #ffffff;"><span style="color: #169179;"><strong>&nbsp;str </strong></span></span></span>, <span style="font-family: helvetica; background-color: #ffffff;"><span style="font-size: 18.6667px; background-color: #ffffff;"><span style="color: #169179;"><strong>&nbsp;int </strong></span></span></span>, <span style="font-family: helvetica; background-color: #ffffff;"><span style="font-size: 18.6667px; background-color: #ffffff;"><span style="color: #169179;"><strong>&nbsp;list </strong></span></span></span>)</td>
+</tr>
+<tr>
+<td style="width: 33.2639%;">Tracking memory states</td>
+<td style="width: 66.7142%;">Serialize models to <span style="font-family: helvetica; background-color: #ffffff;"><span style="font-size: 18.6667px; background-color: #ffffff;"><span style="color: #169179;"><strong>&nbsp;dict </strong></span></span></span>/<span style="font-family: helvetica; background-color: #ffffff;"><span style="font-size: 18.6667px; background-color: #ffffff;"><span style="color: #169179;"><strong> json </strong></span></span></span>&nbsp;for logging/memory</td>
+</tr>
+<tr>
+<td style="width: 33.2639%;">Prompt templating</td>
+<td style="width: 66.7142%;">Easy formatting and export of structured data</td>
+</tr>
+<tr>
+<td style="width: 33.2639%;">Multi-model inputs</td>
+<td style="width: 66.7142%;">Handles nested, optional, and union types elegantly</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;"><strong>Basic Example</strong></p>
+<p style="text-align: left;"><strong><img src="https://canvas.instructure.com/courses/11514125/files/293703310/preview?verifier=sKHOY3hcoI2L9GyMN4y3ZFPJclU9YVczNLhKGiHm" alt="pydantic1.png" width="700" height="190" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293703310" data-api-returntype="File" loading="lazy"></strong></p>
+<p style="text-align: left;"><strong>Usage:</strong></p>
+<p style="text-align: left;"><strong><img src="https://canvas.instructure.com/courses/11514125/files/293703690/preview?verifier=KctJWBDZAro7XdsmkauzqhrUv3eNFD8WpnOZyk53" alt="pydantic2.png" width="700" height="175" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293703690" data-api-returntype="File" loading="lazy"></strong></p>
+<p style="text-align: left;">If someone tries to do:</p>
+<p style="text-align: left;"><img src="https://canvas.instructure.com/courses/11514125/files/293703753/preview?verifier=Ag8M4Xkej96Y7Qtv5OmrI2me4oekv2yi1bxz6tMI" alt="pydantic3.png" width="700" height="94" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293703753" data-api-returntype="File" loading="lazy"></p>
+<p style="text-align: left;">Pydantic will raise a validation error - perfect for catching bugs at the agent layer boundary:</p>
+<p style="text-align: left;"><img src="https://canvas.instructure.com/courses/11514125/files/293703996/preview?verifier=6vPChew42XoRo8zqlFcDxgYcV768wIaysNn7LeFR" alt="pydantic4.png" width="700" height="304" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293703996" data-api-returntype="File" loading="lazy"></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><strong>Memory: Store the Observations</strong></p>
+<p style="text-align: left;"><strong><img src="https://canvas.instructure.com/courses/11514125/files/293704370/preview?verifier=vTVqmtM1byqo0HdtTQlwlmpzFTUaP0TU4MbJ6mj7" alt="pydantic5-1.png" width="700" height="304" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293704370" data-api-returntype="File" loading="lazy"></strong></p>
+<p style="text-align: left;">Easy to log, easy to search. Just call <span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;.model_dump </span></strong></span></span></span>&nbsp;or <span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;model_dump_json </span></strong></span></span></span>&nbsp;to store or serialize (serialization = converting a Python object (or data structure) into a format that can be&nbsp;<strong>stored</strong>,&nbsp;<strong>sent </strong>(over a network to an API or other agent) or&nbsp;<strong>logged </strong>for tracing/debugging).&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">Here's a sample <a class="instructure_file_link instructure_scribd_file inline_disabled" title="talk2mcp2.py" href="https://canvas.instructure.com/courses/11514125/files/293727203?verifier=JlbYtRBpB4ktXPYqZmfd3AAPs4pAgpPKTCjm1x0X&amp;wrap=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293727203" data-api-returntype="File">talk2mcp.py</a> , <a class="instructure_file_link instructure_scribd_file inline_disabled" title="models.py" href="https://canvas.instructure.com/courses/11514125/files/294983556?verifier=8rgTWBjih8oHij1dzyIikXF0RE4Bsi57B6ZYrC3Z&amp;wrap=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/294983556" data-api-returntype="File">models.py</a> and <a class="instructure_file_link instructure_scribd_file inline_disabled" title="example2-4.py" href="https://canvas.instructure.com/courses/11514125/files/293727207?verifier=JCLH5hBlgNve3kFwVgsLW513GKWd8QE8DBN4VP2m&amp;wrap=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293727207" data-api-returntype="File">mcp_server</a> code using Pydantic as an example.&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Agent Architecture - Cognitive Layers</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">TL;DR: Today, we stop thinking of LLMs as <em>"One prompt does everything"</em> and start thinking of them as structured, layered systems. Agents = brains. Let's wire them.&nbsp;</span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">As of now, we are treating our agents as "Augmented LLMs"</span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/11514125/files/293605307/preview?verifier=tq72JmfLooZRwvJfvui5IDoIuky3NiBfZlXGAsMV" alt="56ec0862-cffb-45cc-a8d3-aa0581719d2d_1592x464-1.webp" width="600" height="175" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293605307" data-api-returntype="File" loading="lazy">
+<p>&nbsp;</p>
+<p><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Let's start with a cold open example:</span></span></p>
+<p style="padding-left: 40px;"><em><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">"Hey assistant, remind me to wish John on his birthday next week and also book a table for 2 near his office at 7 PM"</span></span></strong></em></p>
+<ul>
+<li>What is the agent doing here?</li>
+<li>Is it just text completion?</li>
+<li>What kind of memory is involved?</li>
+<li>How does it decide what action to take?</li>
+</ul>
+<p>&nbsp;</p>
+<p>Let's break it down:</p>
+<p><img src="https://canvas.instructure.com/courses/11514125/files/293592971/preview?verifier=5kI4rCZYmw73D0w4xDqZVE8NfN26h1f6jLCU0Am8" alt="whatAgentNeedsToDo.png" width="700" height="112" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293592971" data-api-returntype="File" loading="lazy"></p>
+<p>These are the very 4 layers that we saw above! Even if the above example was for a Chef, this is how it would think:</p>
+<ul>
+<li><strong>Perception</strong>: Reading the order slip</li>
+<li><strong>Memory</strong>: Remembering that one guest is allergic to milk or Gluten</li>
+<li><strong>Decision-Making</strong>: Choosing to substitute basil for cilantro because it's out of stock</li>
+<li><strong>Action</strong>: Cooking the dish and delivering it.&nbsp;</li>
+</ul>
+<p>A smart Chef doesn't ask for the recipe every time. Similarly, a smart AI agent doesn't rely on just the current prompt.&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">The Cognitive Layers</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">This section will explore each cognitive layer of an AI agent. To make this real, we will use Python-style&nbsp;<strong>pseudocode</strong>, though this can be adapted to any language or framework</span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-size: 18pt;"><strong><span style="font-family: helvetica;">Perception Layer - Understanding Input</span></strong></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">The perception layer is responsible for&nbsp;<strong>translating raw user input into structure information&nbsp;</strong>that the agent can reason with:</span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293593553/preview?verifier=STS2xDo0HaojeFHwffw2EEHuYPamlg3AFKx0n7CW" alt="perception1.png" width="700" height="125" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293593553" data-api-returntype="File" loading="lazy"></span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">This is a simple function that uses an LLM to perform information extraction. It&nbsp;<strong>could</strong> return:</span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293593591/preview?verifier=qdQ5n17r86xZ9RcDhGGxRTk6uO1H7OZq0Of9Lie4" alt="perception2.png" width="700" height="176" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293593591" data-api-returntype="File" loading="lazy"></span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Now think what should it return for something like:</span></span></p>
+<ul>
+<li style="text-align: left;"><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Remind me to call Alice after the Zoom call</span></span></strong></li>
+<li style="text-align: left;"><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">If it's sunny tomorrow, schedule tennis at 5.</span></span></strong></li>
+</ul>
+<p><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">By the way <span style="color: #169179;"><strong><span style="background-color: #ecf0f1;">&nbsp;pydantic </span></strong></span>&nbsp;shines here. And you'll end up creating structures around things that cover these thoughts:</span></span></p>
+<ul>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Planning:&nbsp;<em>First, I'll outline the requirements, then create a prototype, and finally test it</em></span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Analysis:&nbsp;<em>This output discrepancy likely stems from inconsistent input formatting</em></span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Decision Making:&nbsp;<em>Since speed is more critical than accuracy here, I'll use a simpler method</em></span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Problem Solving: <em>If the server keeps crashing, maybe switching to asynchronous processing will help</em></span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Memory Integration:&nbsp;<em>They mentioned they prefer visual summaries, so I'll use a chart in the report</em></span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Self-Reflection:&nbsp;<em>That explanation confused the team - I need to clarify my points better next time</em></span></span><em></em></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Goal Setting:&nbsp;<em>My Objective today is to finish the first draft and send it for feedback</em></span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Proritization:&nbsp;<em>Fixing the log in issue takes precedence over updating the UI</em></span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: left;"><span style="font-size: 18pt;"><strong><span style="font-family: helvetica;">Memory Layer - Remembering Stuff</span></strong></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">This layer stores facts or states about the user or the environment that may be relevant for future reasoning. Today, we won't touch on vector databases (that's Session 7). Instead, we use simple memory.</span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293594345/preview?verifier=WTwizqRxr0aGCnGjUN7HqBreKmu64HPQ89Zj8cB4" alt="memory1.png" width="700" height="241" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293594345" data-api-returntype="File" loading="lazy"></span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Use Case:</span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293594381/preview?verifier=IW6L45FLCHhU9HVnSj1TJMqAu15kpWWJHBSWXUvs" alt="memory2.png" width="700" height="112" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293594381" data-api-returntype="File" loading="lazy"></span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">This looks very different from what we are storing currently correct? We're mimicking human memory: remembering facts, and retrieve relevant info later.&nbsp;</span></span></p>
+<p style="text-align: left;"><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">We would use JSON or YAML to preserve the memory beyond runtime later on.&nbsp;</span></span></strong></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-size: 18pt;"><strong><span style="font-family: helvetica;">Decision-Making Layer -Planning Next Step</span></strong></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">The decision layer decides what to do next based on current input + memory.</span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293594575/preview?verifier=ygMcv7igd57Xi0cnxr0Pzv3IbpCwOw69TQ8j5geQ" alt="decision1.png" width="700" height="146" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293594575" data-api-returntype="File" loading="lazy"></span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">This layer is where your agent starts&nbsp;<em>thinking</em>. It reasons about options, considers memory, and picks an action plan. This would seem very similar to what we have been doing till now.&nbsp;</span></span></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left; padding-left: 40px;"><em><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">This is where Chain-of-Thought or self-reflection prompting can also be plugged in (covered in Session 5)</span></span></strong></em></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-size: 18pt;"><strong><span style="font-family: helvetica;">Action Layer - Do the thing<span style="font-size: 14pt;"><sup>TM</sup></span></span></strong></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">The final layer executes the decision. This could be:</span></span></p>
+<ul>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Outputting a response</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Calling an external API or MCP tool</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Writing to a file or calendar (again using tools)</span></span></li>
+</ul>
+<p><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><img src="https://canvas.instructure.com/courses/11514125/files/293594706/preview?verifier=2xZmFmTrPRWY4jiNnyinLVg8dWfZYLJSqmOqpCqG" alt="action1.png" width="700" height="192" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293594706" data-api-returntype="File" loading="lazy"></span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Single Agent vs multi-agent architectures</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;">When building an agentic system you can build either a single-agent or a multi-agent architecture.&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">The choice depends on your use case and how complex the required agent actions are:</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-size: 18pt;"><strong>Single Agent Architecture</strong></span></p>
+<p style="text-align: left;"><img src="https://canvas.instructure.com/courses/11514125/files/293595300/preview?verifier=S7cqgTx5ftVz25i14vUTfGGCIJiZasH1Ra77uq61" alt="singeAgent.png" width="700" height="199" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293595300" data-api-returntype="File" loading="lazy"></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><strong>Strengths</strong>:</span></span></p>
+<ul>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Low complexity and easier to develop and manager</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">No coordination between multiple agents</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">May require fewer computational resources for a single powerful agent</span></span></li>
+</ul>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Weakness</span></span></strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">:</span></span></p>
+<ul>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">May struggle with complex or dynamic tasks</span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Limited in handling tasks that require collaboration or diverse expertise</span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">The agent can get confused and use an incorrect tool call arguments if the agent has too many different tool options available</span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">May require a larger, more expensive model to handle multiple reasoning steps</span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="font-size: 18pt;"><strong>Multi-Agent Architecture</strong></span></span></span></p>
+<p><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><span style="font-size: 18pt;"><strong><img src="https://canvas.instructure.com/courses/11514125/files/293596551/preview?verifier=NiXI191rgvWsvnMoTO8LorqR1fKTwI7faVnHdXfl" alt="multi-agent.png" width="700" height="355" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293596551" data-api-returntype="File" loading="lazy"></strong></span></span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Multi-agent architectures have multiple AI agents collaborating to resolve tasks.&nbsp;</span></span></p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Note that each agent is equipped with its own memory here. However, you can also have memory for the compositional agentic architecture.</span></span></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><strong>Strengths</strong>:</span></span></p>
+<ul>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Capable of handling complex and dynamic tasks</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Capable of parallel processing for efficiency</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Possible to use smaller models specialized for distinct tasks</span></span></li>
+</ul>
+<p><strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Weakness</span></span></strong><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">:</span></span></p>
+<ul>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Increased complexity due to multiple agents collaborating with each other.</span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Requires robust mechanisms to manage interactions.</span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Harder to debug and optimize due to added complexity.&nbsp;</span></span></li>
+<li><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">May require more resources as more agents are added to the system.&nbsp;</span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Patterns in multi-agent systems</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<table style="border-collapse: collapse; width: 86.8639%; height: 102px; border-style: none;" border="0">
+<tbody>
+<tr>
+<td style="width: 50.0495%;"><img src="https://canvas.instructure.com/courses/11514125/files/293604024/preview?verifier=blLhT9OyD61MBr7NpmvX8f6GQMDOvqjWzDUcqt3z" alt="singeAgent-2.png" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293604024" data-api-returntype="File" loading="lazy"></td>
+<td style="width: 50.0495%;">
+<p><strong>Parallel<br></strong>Multiple agents work simultaneously on different parts of a task.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Sequential<br></strong>Tasks are processed sequentially, where one agent's output becomes input for the next.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Loop<br></strong>Agents operate in iterative cycles, continuously improving their outputs based on feedback from other agents(s)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Router<br></strong>A central router determines which agent(s) to invoke based on the task or input.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">I really don't like these patterns, because I think the system should decide on its own what to do, or which pattern to pick.</span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Agentic Architecture</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;"><img src="https://canvas.instructure.com/courses/11514125/files/293604663/preview?verifier=Ica8KrcQ5sFrLNfw4ynXm1SjPFnG0zt50h2oWVUL" alt="singeAgent2.png" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293604663" data-api-returntype="File" loading="lazy">&nbsp;</p>
+<p style="text-align: center;">Now we can pick any of the multi-agentic pattern also above. Before we sign off, let's check this <a class="inline_disabled" href="https://www.agentrecipes.com/" target="_blank">link</a> which is built on a great <a class="inline_disabled" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank">article from Anthropic</a>.</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Assignment</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<ul style="list-style-type: disc;">
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">We discussed 4 Cognitive Layers today: Perception (LLM), Memory, Decision-Making, and Action.&nbsp;</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Your goal is to first create 4 different files (modules) for each one of these.&nbsp;</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Then in your main.py configure the whole agent.&nbsp;</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Then re-do the last assignment.</span></span></li>
+<li style="text-align: left;"><em><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Twist: whatever you're building, you need to ask the user about his preference "before" your agentic flow starts.</span></span></em><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"> This can be his likes, location, taste, favorite topics, etc. (would be related to your extension idea). Then you need to feed this as part of the prompt.&nbsp;</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">You MUST make sure that your final system_prompt clears this <a id="293340442" class="instructure_file_link inline_disabled" href="https://canvas.instructure.com/courses/11514125/files/293340442?verifier=1kHFuhcrFvqGC4tpIYSBLg3lhVZo5dyW8lcHLvIg&amp;wrap=1" target="_blank" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293340442" data-api-returntype="File">prompt test</a>.</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">You MUST use Pydantic to define all inputs and outputs:<br><img src="https://canvas.instructure.com/courses/11514125/files/293710549/preview?verifier=rgsbxKUvwSPT4zqKM7mWXUzE7jauhSSVGe0L0NC4" alt="pydantic6.png" width="700" height="577" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/293710549" data-api-returntype="File" loading="lazy"><br></span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">You're submitting:</span></span>
+<ul style="list-style-type: disc;">
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">GitHub Link for me to see the code needs to have a beautiful, well-documented README.md (0 points of this file is not there)</span></span></li>
+<li style="text-align: left;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">YouTube video link demonstrating your Extension.&nbsp;</span></span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div id="one" style="background-color: #7bccd5; color: white; text-align: center; margin: auto; padding: 19px; border-radius: 5px; background-image: linear-gradient(175deg, #145277  0%, #83d0cb  100%);">
+<h1 style="color: #000000; font-family: Arial; font-size: 19px; font-style: normal; line-height: 19px;"><span style="font-family: helvetica;"><strong><span style="color: #fff;"><span style="font-size: 18.6667px;">Video</span></span></strong></span></h1>
+</div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">Studio (<a class="instructure_file_link instructure_scribd_file inline_disabled" title="EAG V1 Session - 2025_04_12 11_36 GMT+05_30 - Transcript.docx" href="https://canvas.instructure.com/courses/11514125/files/294597889?verifier=ULoJfYbtrdcjpIC9O2yM2ThEVN6M03hjzFAPvARG&amp;wrap=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/11514125/files/294597889" data-api-returntype="File">Transcript</a>)</span></span></p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><iframe title="YouTube video player" src="https://www.youtube.com/embed/qv6C5onKw14?si=2_ihQOoNpQ2ZxQTG" width="560" height="315" loading="lazy" allowfullscreen="allowfullscreen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;">GMeet</span></span></p>
+<p style="text-align: center;"><span style="font-family: helvetica;"><span style="font-size: 18.6667px;"><iframe title="YouTube video player" src="https://www.youtube.com/embed/zfUdwuZVSr0?si=SjPDG5kZXT4CIvyv" width="560" height="315" loading="lazy" allowfullscreen="allowfullscreen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></span></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
+</div>
